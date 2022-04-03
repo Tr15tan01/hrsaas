@@ -15,6 +15,8 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
+import env from "react-dotenv";
+
 //local
 import ControlledAccordions from '../components/Accordion'
 
@@ -95,6 +97,8 @@ const footers = [
         description: ['Privacy policy', 'Terms of use'],
     },
 ];
+
+console.log('env is ', env)
 
 export default function HomePage() {
     return (
