@@ -21,14 +21,13 @@ export default function ControlledAccordions() {
                     id="panel1bh-header"
                 >
                     <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                        General settings
+                        What is HRSaas
                     </Typography>
-                    <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
+                    <Typography sx={{ color: 'text.secondary' }}>It is a Platform..</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-                        Aliquam eget maximus est, id dignissim quam.
+                        HRSaaS is a platform, where everyone can add users and have his area.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -38,24 +37,22 @@ export default function ControlledAccordions() {
                     aria-controls="panel2bh-content"
                     id="panel2bh-header"
                 >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
+                    <Typography sx={{ width: '33%', flexShrink: 0 }}>Why this</Typography>
                     <Typography sx={{ color: 'text.secondary' }}>
-                        You are currently not an owner
+                        It is very useful and ...
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-                        varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-                        laoreet.
+                        and very platform that eveyone needs to access to and this is good need to add some text here
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+            <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2bh-content"
-                    id="panel2bh-header"
+                    id="panel3bh-header"
                 >
                     <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
                     <Typography sx={{ color: 'text.secondary' }}>

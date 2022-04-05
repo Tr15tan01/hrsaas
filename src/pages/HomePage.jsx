@@ -19,59 +19,48 @@ import env from "react-dotenv";
 
 //local
 import ControlledAccordions from '../components/Accordion'
+import MainNavigationComponent from '../components/MainNavigation';
+import Copyright from '../components/Copyright';
 
-function Copyright(props) {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
-
-const tiers = [
-    {
-        title: 'Free',
-        price: '0',
-        description: [
-            '10 users included',
-            '2 GB of storage',
-            'Help center access',
-            'Email support',
-        ],
-        buttonText: 'Sign up for free',
-        buttonVariant: 'outlined',
-    },
-    {
-        title: 'Pro',
-        subheader: 'Most popular',
-        price: '15',
-        description: [
-            '20 users included',
-            '10 GB of storage',
-            'Help center access',
-            'Priority email support',
-        ],
-        buttonText: 'Get started',
-        buttonVariant: 'contained',
-    },
-    {
-        title: 'Enterprise',
-        price: '30',
-        description: [
-            '50 users included',
-            '30 GB of storage',
-            'Help center access',
-            'Phone & email support',
-        ],
-        buttonText: 'Contact us',
-        buttonVariant: 'outlined',
-    },
-];
+// const tiers = [
+//     {
+//         title: 'Free',
+//         price: '0',
+//         description: [
+//             '10 users included',
+//             '2 GB of storage',
+//             'Help center access',
+//             'Email support',
+//         ],
+//         buttonText: 'Sign up for free',
+//         buttonVariant: 'outlined',
+//     },
+//     {
+//         title: 'Pro',
+//         subheader: 'Most popular',
+//         price: '15',
+//         description: [
+//             '20 users included',
+//             '10 GB of storage',
+//             'Help center access',
+//             'Priority email support',
+//         ],
+//         buttonText: 'Get started',
+//         buttonVariant: 'contained',
+//     },
+//     {
+//         title: 'Enterprise',
+//         price: '30',
+//         description: [
+//             '50 users included',
+//             '30 GB of storage',
+//             'Help center access',
+//             'Phone & email support',
+//         ],
+//         buttonText: 'Contact us',
+//         buttonVariant: 'outlined',
+//     },
+// ];
 
 const footers = [
     {
@@ -98,6 +87,8 @@ const footers = [
     },
 ];
 
+const bannerImageUrl = 'https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+
 console.log('env is ', env)
 
 export default function HomePage() {
@@ -105,57 +96,9 @@ export default function HomePage() {
         <React.Fragment>
             <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' }, nav: { textDecoration: 'none' } }} />
             <CssBaseline />
-            <AppBar
-                position="static"
-                color="default"
-                elevation={0}
-                sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
-            >
-                <Toolbar sx={{ flexWrap: 'wrap' }}>
-                    <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        Company name
-                    </Typography>
-                    <nav>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href="/"
-                            sx={{ my: 1, mx: 1.5 }}
-                        >
-                            Homepage
-                        </Link>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href="/pricing"
-                            sx={{ my: 1, mx: 1.5 }}
-                        >
-                            Pricing
-                        </Link>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href="#"
-                            sx={{ my: 1, mx: 1.5 }}
-                        >
-                            Enterprise
-                        </Link>
-                        <Link
-                            variant="button"
-                            color="text.primary"
-                            href="#"
-                            sx={{ my: 1, mx: 1.5 }}
-                        >
-                            Support
-                        </Link>
-                    </nav>
-                    <Button href="/signin" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
-                        Login
-                    </Button>
-                </Toolbar>
-            </AppBar>
+            <MainNavigationComponent />
             {/* Hero unit */}
-            <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
+            <Container disableGutters maxWidth="lg" component="main" sx={{ pt: 8, pb: 6 }}>
                 <Typography
                     component="h1"
                     variant="h2"
@@ -165,16 +108,36 @@ export default function HomePage() {
                 >
                     Homepage
                 </Typography>
-                <Typography variant="h5" align="center" color="text.secondary" component="p">
-                    Quickly build an effective pricing table for your potential customers with
-                    this layout. It&apos;s built with default MUI components with little
-                    customization.
-                </Typography>
+                <Box sx={{ position: 'relative' }}>
+                    <Box
+                        component="img"
+                        sx={{
+                            width: '100%',
+                            height: 300,
+                            // borderRadius: 6,
+                            p: 0,
+                            m: 0
+                            // maxHeight: { xs: 233, md: 167 }
+                            // maxWidth: { xs: 350, md: 250 },
+                        }}
+                        alt="The house from the offer."
+                        // src={personUrl}
+                        src={bannerImageUrl}
+                    />
+                    <Typography variant="h5" align="center" color="white" component="p" sx={{ position: 'absolute', top: '33%' }}>
+                        Quickly build an effective pricing table for your potential customers with
+                        this layout. It&apos;s built with default MUI components with little
+                        customization.
+                    </Typography>
+                </Box>
             </Container>
             {/* End hero unit */}
             <Container maxWidth="md" component="main">
                 <Typography variant="h4" m={4}>
                     Frequently Asked Questions
+                </Typography>
+                <Typography variant="h5" m={4}>
+                    (What is all this about)
                 </Typography>
                 <ControlledAccordions />
             </Container>
