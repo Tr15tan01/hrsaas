@@ -39,6 +39,7 @@ export default class NewItemPage extends React.Component {
             name: '',
             email: '',
             address: '',
+            birthDay: '',
             age: 0
         }
     }
@@ -49,8 +50,8 @@ export default class NewItemPage extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log('State is - ', this.state, 'user is - ', this.props.currentUser.id)
-        addToArray(this.state.id, this.state.name, this.state.email, this.state.address, this.state.age, this.state.photo, this.props.currentUser.id)
-        this.setState({ name: '', email: '', address: '', age: 0 })
+        addToArray(this.state.id, this.state.name, this.state.email, this.state.address, this.state.birthDay, this.state.age, this.state.photo, this.props.currentUser.id)
+        this.setState({ name: '', email: '', address: '', birthDay: '', age: 0 })
         const file = this.state.selectedFile
         const fileName = this.state.fileName;
         const folderName = this.state.folderName;
@@ -59,7 +60,7 @@ export default class NewItemPage extends React.Component {
 
     handleChange = event => {
         const { value, name } = event.target;
-        this.setState({ [name]: value })
+        this.setState({ [name]: value }, () => console.log('state from hchange', this.state))
     }
 
     onImageChange = event => {
@@ -141,6 +142,19 @@ export default class NewItemPage extends React.Component {
                                 label="address"
                                 id="address"
                                 autoComplete="off"
+                            />
+                            <TextField
+                                id="date"
+                                label="Birthday"
+                                name="birthDay"
+                                type="date"
+                                value={this.state.birthDay}
+                                onChange={this.handleChange}
+                                // defaultValue="2000-05-24"
+                                sx={{ width: 220 }}
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
                             />
                             <TextField
                                 onChange={this.handleChange}

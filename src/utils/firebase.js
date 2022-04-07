@@ -82,13 +82,13 @@ export default app;
 
 //test
 
-export const addToArray = async (id, name, email, address, age, photo, user) => {
+export const addToArray = async (id, name, email, address, birthDay, age, photo, user) => {
 
     const washingtonRef = await doc(firestore, "users", user);
 
     // Atomically add a new region to the "regions" array field.
     await updateDoc(washingtonRef, {
-        employees: arrayUnion({ id: id, name: name, email: email, address: address, age: age, photo: photo })
+        employees: arrayUnion({ id: id, name: name, email: email, address: address, birthDay: birthDay, age: age, photo: photo })
     });
 }
 

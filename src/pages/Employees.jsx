@@ -114,7 +114,7 @@ function EmployeesPage(props) {
                             <Grid item xs={12}>
 
                                 <Item>
-                                    <img src={image} alt="test  url" />
+                                    {/* <img src={image} alt="test  url" /> */}
                                     <Typography variant="h5">This is honna be another headline headline</Typography>
                                     <Typography variant="p">This is honna be a paratraph abaouht it it it, This is honna be a paratraph abaouht it it it</Typography>
                                 </Item>
