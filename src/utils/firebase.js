@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore"
+import { doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore"
 // Import the functions you need from the SDKs you need
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 

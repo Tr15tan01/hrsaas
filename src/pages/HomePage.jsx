@@ -45,6 +45,7 @@ const bannerImageUrl = 'https://images.unsplash.com/photo-1563089145-599997674d4
 console.log('env is ', env)
 
 export default function HomePage() {
+    console.log('location', window.location.href)
     return (
         <React.Fragment>
             <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' }, nav: { textDecoration: 'none' } }} />

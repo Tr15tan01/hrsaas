@@ -10,11 +10,11 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
 
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+// import { getStorage } from "firebase/storage";
 //local imports
 import TopBar from '../components/TopBar';
 // import Chart from '../components/Chart'
-import { checkData, checkImage } from '../utils/firebase';
+import { checkData } from '../utils/firebase';
 
 import ListComponent from '../components/List';
 // import InfoBox from '../components/InfoBox';
@@ -31,23 +31,23 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function EmployeesPage(props) {
     const [data, setData] = useState('test')
-    const [image, setImage] = useState('')
+    // const [image, setImage] = useState('')
     // const [adata, setAdata] = useState('atest')
-    const storage = getStorage();
-    async function checkImage(url) {
-        // const spaceRef = await ref(storage, 'images/chatbot.jpg');
-        getDownloadURL(ref(storage, url))
-            .then((url) => {
+    // const storage = getStorage();
+    // async function checkImage(url) {
+    //     // const spaceRef = await ref(storage, 'images/chatbot.jpg');
+    //     getDownloadURL(ref(storage, url))
+    //         .then((url) => {
 
-                console.log('utl is', url)
-                setImage(url)
-                return url
-            })
-            .catch((error) => {
-                // Handle any errors
-                console.log(error)
-            });
-    }
+    //             // console.log('utl is', url)
+    //             setImage(url)
+    //             return url
+    //         })
+    //         .catch((error) => {
+    //             // Handle any errors
+    //             console.log(error)
+    //         });
+    // }
 
     // checkImage()
 
@@ -58,17 +58,17 @@ function EmployeesPage(props) {
 
             const data = await checkData(props.currentUser.id)
             const dataDisplay = data.employees.map((item) => {
-                checkImage(item.photo)
+                // checkImage(item.photo)
 
                 return (
                     <>
-                        <Divider key={item.id} variant="inset" component="li" />
-                        <ListItem alignItems="flex-start">
+                        <Divider key={item.name} variant="inset" component="li" />
+                        <ListItem key={item.id} alignItems="flex-start">
                             <ListItemAvatar>
-                                <Avatar alt="Cindy Baker" src={image} />
+                                <Avatar alt="Cindy Baker" sx={{ bgcolor: 'purple' }}>{item.name.charAt(0).toUpperCase()}</Avatar>
                             </ListItemAvatar>
                             <ListItemText
-                                primary={item.email}
+                                primary={item.name}
                                 secondary={
                                     <React.Fragment>
                                         <Typography
@@ -77,7 +77,15 @@ function EmployeesPage(props) {
                                             variant="body2"
                                             color="text.primary"
                                         >
-                                            {item.name} - Age is - {item.age} - photo - {item.photo}
+                                            {item.email} - Birthday - {item.birthDay}
+                                        </Typography>
+                                        <Typography
+                                            sx={{ display: 'inline' }}
+                                            component="span"
+                                            variant="body2"
+                                            color="text.primary"
+                                        >
+                                            {item.email} - Birthday - {item.birthDay}
                                         </Typography>
                                         {' — Do you have Paris recommendations? Have you ever…'}
                                         <Link to='/employee' state={{ name: item.name, imageUrl: item.photo }}>Test Llink</Link>
@@ -87,7 +95,7 @@ function EmployeesPage(props) {
                         </ListItem>
                     </>)
             })
-            console.log('display data', dataDisplay)
+            // console.log('display data', dataDisplay)
             setData(dataDisplay)
         }
 
@@ -130,7 +138,7 @@ function EmployeesPage(props) {
                             <Grid item xs={12}>
 
                                 <List sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper' }}>
-                                    <ListItem alignItems="flex-start">
+                                    {/* <ListItem alignItems="flex-start">
                                         <ListItemAvatar>
                                             <Avatar alt="Remy Sharp" src={'test'} />
                                         </ListItemAvatar>
@@ -196,7 +204,7 @@ function EmployeesPage(props) {
                                                 </React.Fragment>
                                             }
                                         />
-                                    </ListItem>
+                                    </ListItem> */}
                                     {data}
                                 </List>
 
