@@ -8,8 +8,6 @@ import CardMedia from '@mui/material/CardMedia';
 
 // import OutlinedInput from '@mui/material/OutlinedInput';
 import Typography from '@mui/material/Typography';
-// import InputLabel from '@mui/material/InputLabel';
-// import InputAdornment from '@mui/material/InputAdornment';
 
 import { Button } from "@mui/material";
 

@@ -31,39 +31,25 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function EmployeesPage(props) {
     const [data, setData] = useState('test')
-    // const [image, setImage] = useState('')
-    // const [adata, setAdata] = useState('atest')
-    // const storage = getStorage();
-    // async function checkImage(url) {
-    //     // const spaceRef = await ref(storage, 'images/chatbot.jpg');
-    //     getDownloadURL(ref(storage, url))
-    //         .then((url) => {
-
-    //             // console.log('utl is', url)
-    //             setImage(url)
-    //             return url
-    //         })
-    //         .catch((error) => {
-    //             // Handle any errors
-    //             console.log(error)
-    //         });
-    // }
-
-    // checkImage()
 
     useEffect(() => {
         const readData = async () => {
-            // const myUrl = await checkImage().then((url) => url)
-            // console.log('myUrl is - ', myUrl)
 
             const data = await checkData(props.currentUser.id)
+            //check if there are any records, if not display message
+            if (data.employees.length <= 0) {
+                setData('Sorry no records yet testing...')
+                console.log(data.employees.length)
+                return
+            }
+
+            //if there are records display them
             const dataDisplay = data.employees.map((item) => {
-                // checkImage(item.photo)
 
                 return (
-                    <>
-                        <Divider key={item.name} variant="inset" component="li" />
-                        <ListItem key={item.id} alignItems="flex-start">
+                    <div key={item.id}>
+                        <Divider variant="inset" component="li" />
+                        <ListItem alignItems="flex-start">
                             <ListItemAvatar>
                                 <Avatar alt="Cindy Baker" sx={{ bgcolor: 'purple' }}>{item.name.charAt(0).toUpperCase()}</Avatar>
                             </ListItemAvatar>
@@ -93,7 +79,7 @@ function EmployeesPage(props) {
                                 }
                             />
                         </ListItem>
-                    </>)
+                    </div>)
             })
             // console.log('display data', dataDisplay)
             setData(dataDisplay)
@@ -104,6 +90,9 @@ function EmployeesPage(props) {
 
     }, [props.currentUser.id])
 
+    if (props.currentUser) {
+        console.log('props os', props)
+    }
 
     return (
         <div className="App">
@@ -138,77 +127,10 @@ function EmployeesPage(props) {
                             <Grid item xs={12}>
 
                                 <List sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper' }}>
-                                    {/* <ListItem alignItems="flex-start">
-                                        <ListItemAvatar>
-                                            <Avatar alt="Remy Sharp" src={'test'} />
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary="Brunch this weekend?"
-                                            secondary={
-                                                <React.Fragment>
-                                                    <Typography
-                                                        sx={{ display: 'inline' }}
-                                                        component="span"
-                                                        variant="body2"
-                                                        color="text.primary"
-                                                    >
-                                                        Ali Connors
-                                                    </Typography>
-                                                    {" — I'll be in your neighborhood doing errands this…"}
-                                                    <Link to="/employee" state={{ infinity: 'This is infinite', favoriteFood: 'Lobio' }}>Click This Test Link</Link>
-                                                </React.Fragment>
-                                            }
-                                        />
-                                    </ListItem>
-                                    <Divider variant="inset" component="li" />
-                                    <ListItem alignItems="flex-start">
-                                        <ListItemAvatar>
-                                            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary="Summer BBQ"
-                                            secondary={
-                                                <React.Fragment>
-                                                    <Typography
-                                                        sx={{ display: 'inline' }}
-                                                        component="span"
-                                                        variant="body2"
-                                                        color="text.primary"
-                                                    >
-                                                        to Scott, Alex, Jennifer
-                                                    </Typography>
-                                                    {" — Wish I could come, but I'm out of town this…"}
-                                                    <Link to="/employee" state={{ infinity: 'Whaterever you want', favoriteFood: 'Brinjis Flavi' }}>Click This Test Link</Link>
-                                                </React.Fragment>
-                                            }
-                                        />
-                                    </ListItem>
-                                    <Divider variant="inset" component="li" />
-                                    <ListItem alignItems="flex-start">
-                                        <ListItemAvatar>
-                                            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary="Oui Oui"
-                                            secondary={
-                                                <React.Fragment>
-                                                    <Typography
-                                                        sx={{ display: 'inline' }}
-                                                        component="span"
-                                                        variant="body2"
-                                                        color="text.primary"
-                                                    >
-                                                        Sandra Adams
-                                                    </Typography>
-                                                    {' — Do you have Paris recommendations? Have you ever…'}
-                                                </React.Fragment>
-                                            }
-                                        />
-                                    </ListItem> */}
+
+                                    test
                                     {data}
                                 </List>
-
-
 
 
                             </Grid>

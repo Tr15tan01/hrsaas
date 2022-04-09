@@ -16,6 +16,10 @@ import { styled } from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import { addToArray, uploadImage } from '../utils/firebase';
 
@@ -28,8 +32,7 @@ import { Button, Container } from "@mui/material";
 
 import TopBar from '../components/TopBar';
 import ListComponent from '../components/List';
-// import BasicSelect from '../components/Select'
-import CardComponent from '../components/CardComponent';
+import CustomTextField from '../components/TextField';
 
 export default class NewItemPage extends React.Component {
     constructor(props) {
@@ -40,7 +43,9 @@ export default class NewItemPage extends React.Component {
             email: '',
             address: '',
             birthDay: '',
-            age: 0
+            age: 0,
+            gender: '',
+            info: ''
         }
     }
 
@@ -50,8 +55,8 @@ export default class NewItemPage extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log('State is - ', this.state, 'user is - ', this.props.currentUser.id)
-        addToArray(this.state.id, this.state.name, this.state.email, this.state.address, this.state.birthDay, this.state.age, this.state.photo, this.props.currentUser.id)
-        this.setState({ name: '', email: '', address: '', birthDay: '', age: 0 })
+        addToArray(this.state.id, this.state.name, this.state.email, this.state.address, this.state.birthDay, this.state.age, this.state.gender, this.state.photo, this.props.currentUser.id)
+        this.setState({ name: '', email: '', address: '', birthDay: '', age: 0, gender: '' })
         const file = this.state.selectedFile
         const fileName = this.state.fileName;
         const folderName = this.state.folderName;
@@ -101,8 +106,7 @@ export default class NewItemPage extends React.Component {
                     <Box sx={{ width: 1, p: 2 }}>
 
                         <Box sx={{ width: 1, p: 2, display: 'flex', flexDirection: 'row' }}>
-                            <CardComponent />
-                            <CardComponent />
+
                         </Box>
 
                         <Typography variant="h3" color="text.secondary">Adding New Record</Typography>
@@ -151,7 +155,7 @@ export default class NewItemPage extends React.Component {
                                 value={this.state.birthDay}
                                 onChange={this.handleChange}
                                 // defaultValue="2000-05-24"
-                                sx={{ width: 220 }}
+                                sx={{ width: '100%' }}
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -168,6 +172,20 @@ export default class NewItemPage extends React.Component {
                                 id="age"
                                 autoComplete="off"
                             />
+                            <CustomTextField name="info" label="info" id="info" value={this.state.info} handleChange={this.handleChange} />
+                            <FormControl fullWidth sx={{ mt: 2, mb: 2 }}>
+                                <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                                <Select
+                                    labelId="Gender"
+                                    id="demo-simple-select"
+                                    value={this.state.gender}
+                                    label="Gender"
+                                    onChange={this.handleChange}
+                                >
+                                    <MenuItem value={'Male'}>Male</MenuItem>
+                                    <MenuItem value={'Female'}>Female</MenuItem>
+                                </Select>
+                            </FormControl>
 
                             <Stack direction="row" alignItems="center" spacing={2}>
                                 <label htmlFor="contained-button-file">

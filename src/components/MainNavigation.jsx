@@ -24,7 +24,7 @@ const MainNavigationComponent = () => {
                         <Link
                             variant="button"
                             color="text.primary"
-                            to="/"
+                            to="/hrsaas"
                             sx={{ my: 1, mx: 1.5, color: 'white' }}
                         >
                             Homepage

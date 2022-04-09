@@ -64,7 +64,7 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/hrsaas" element={<HomePage />} />
             <Route path="/mainpage" element={!this.state.currentUser ? (<Navigate to="/signin" />) : (<MainPage />)} />
             <Route path="/signin" element={this.state.currentUser ? (<Navigate to="/mainpage" />) : (<SignInPage />)} />
             <Route path="/signup" element={<SignUpPage />} />

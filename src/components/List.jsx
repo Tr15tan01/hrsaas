@@ -41,15 +41,6 @@ const ListComponent = () => {
                             <ListItemText primary="Employees" />
                         </ListItemButton>
                     </ListItem></Link>
-                    <Link to="/employee"><ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <DraftsIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Employee" />
-                        </ListItemButton>
-                    </ListItem>
-                    </Link>
                     <Link to="/newitem"><ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
