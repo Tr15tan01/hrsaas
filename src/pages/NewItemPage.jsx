@@ -44,7 +44,6 @@ export default class NewItemPage extends React.Component {
             address: '',
             birthDay: '',
             age: 0,
-            gender: '',
             info: ''
         }
     }
