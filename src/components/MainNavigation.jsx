@@ -40,7 +40,7 @@ const MainNavigationComponent = () => {
                         <Link
                             variant="button"
                             color="text.primary"
-                            to="/hrsaas/instruction"
+                            to="/instruction"
                             sx={{ my: 1, mx: 1.5 }}
                         >
                             Enterprise
@@ -51,7 +51,7 @@ const MainNavigationComponent = () => {
                             to="/signin"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Support
+                            Signin
                         </Link>
                     </nav>
                     <Button to="/signin" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
