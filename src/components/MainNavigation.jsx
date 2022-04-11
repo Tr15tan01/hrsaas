@@ -48,7 +48,7 @@ const MainNavigationComponent = () => {
                         <Link
                             variant="button"
                             color="text.primary"
-                            to="/instruction"
+                            to="/signin"
                             sx={{ my: 1, mx: 1.5 }}
                         >
                             Support
