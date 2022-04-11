@@ -43,6 +43,7 @@ export const addCollection = async (id) => {
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return
+
     const userRef = firestore.doc(`users/${userAuth.uid}`)
     // const docRef = firestore.collection(`users/${userAuth.uid}/services`)
     console.log('userrefid id id', userRef.id)

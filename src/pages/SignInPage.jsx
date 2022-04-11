@@ -26,7 +26,8 @@ export default class SignInPage extends React.Component {
         this.theme = createTheme();
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            errorMessage: ''
         }
     }
     // handleSubmit = (event) => {
@@ -48,7 +49,8 @@ export default class SignInPage extends React.Component {
             this.setState({ email: '', password: '' })
             // console.log('state cleared?', email, password)
         } catch (error) {
-            console.log(error)
+            this.setState({ errorMessage: error.message })
+            console.log(error.message, 'this erred here fucker...')
         }
 
     }
@@ -84,6 +86,7 @@ export default class SignInPage extends React.Component {
                             Sign in
                         </Typography>
                         <Box component="form" onSubmit={this.handleSubmit} noValidate sx={{ mt: 1 }}>
+                            {this.state.errorMessage}
                             <TextField
                                 onChange={this.handleChange}
                                 value={this.state.email}
