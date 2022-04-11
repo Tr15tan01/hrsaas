@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hrsaas/static/css/main.a262e9cf.css",
-    "main.js": "/hrsaas/static/js/main.345cfd70.js",
+    "main.js": "/hrsaas/static/js/main.48ac2b3c.js",
     "static/js/787.91af0c9b.chunk.js": "/hrsaas/static/js/787.91af0c9b.chunk.js",
     "index.html": "/hrsaas/index.html",
     "main.a262e9cf.css.map": "/hrsaas/static/css/main.a262e9cf.css.map",
-    "main.345cfd70.js.map": "/hrsaas/static/js/main.345cfd70.js.map",
+    "main.48ac2b3c.js.map": "/hrsaas/static/js/main.48ac2b3c.js.map",
     "787.91af0c9b.chunk.js.map": "/hrsaas/static/js/787.91af0c9b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a262e9cf.css",
-    "static/js/main.345cfd70.js"
+    "static/js/main.48ac2b3c.js"
   ]
 }
