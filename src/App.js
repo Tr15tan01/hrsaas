@@ -27,7 +27,7 @@ class App extends React.Component {
 
   constructor() {
     super();
-    this.state = { currentUser: null, isLogged: false }
+    this.state = { currentUser: null, isLogged: false, language: 'En' }
   }
 
   unsubscribeFromAuth = null
@@ -71,7 +71,7 @@ class App extends React.Component {
             <Route path="/signin" element={this.state.currentUser ? (<Navigate to="/mainpage" />) : (<SignInPage />)} />
             {/* <Route path="/signin" element={<SignInPage />} /> */}
             {/* testing */}
-            <Route path="/instruction" element={<InstructionPage />} />
+            <Route path="/instruction" element={<InstructionPage language={this.state.language} />} />
             <Route path="/signup" element={this.state.currentUser ? (<Navigate to="/" />) : (<SignUpPage />)} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/newitem" element={<NewItemPage currentUser={this.state.currentUser} />} />

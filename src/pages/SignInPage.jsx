@@ -49,8 +49,7 @@ export default class SignInPage extends React.Component {
             this.setState({ email: '', password: '' })
             // console.log('state cleared?', email, password)
         } catch (error) {
-            this.setState({ errorMessage: error.message })
-            console.log(error.message, 'this erred here fucker...')
+            await this.setState({ errorMessage: error.code.toString().slice(5) })
         }
 
     }
@@ -86,7 +85,9 @@ export default class SignInPage extends React.Component {
                             Sign in
                         </Typography>
                         <Box component="form" onSubmit={this.handleSubmit} noValidate sx={{ mt: 1 }}>
-                            {this.state.errorMessage}
+                            <Typography variant="p" color="error">
+                                {this.state.errorMessage}
+                            </Typography>
                             <TextField
                                 onChange={this.handleChange}
                                 value={this.state.email}
@@ -137,7 +138,7 @@ export default class SignInPage extends React.Component {
                                 </Grid>
                                 <Grid item>
                                     <Link href="/signup" variant="body2">
-                                        {"Don't have an account? Sign Up"}
+                                        Don't have an account? Sign Up
                                     </Link>
                                 </Grid>
                             </Grid>

@@ -44,7 +44,8 @@ export default class NewItemPage extends React.Component {
             address: '',
             birthDay: '',
             age: 0,
-            info: ''
+            info: '',
+            gender: ''
         }
     }
 
@@ -176,8 +177,10 @@ export default class NewItemPage extends React.Component {
                                 <InputLabel id="demo-simple-select-label">Gender</InputLabel>
                                 <Select
                                     labelId="Gender"
-                                    id="demo-simple-select"
                                     value={this.state.gender}
+                                    defaultValue={'Female'}
+                                    id="demo-simple-select"
+                                    name="gender"
                                     label="Gender"
                                     onChange={this.handleChange}
                                 >

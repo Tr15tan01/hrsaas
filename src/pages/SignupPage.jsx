@@ -24,7 +24,8 @@ export default class SignUpPage extends React.Component {
             email: '',
             displayName: '',
             password: '',
-            passwordconfirm: ''
+            passwordconfirm: '',
+            errorMessage: ''
         }
     }
 
@@ -50,8 +51,9 @@ export default class SignUpPage extends React.Component {
                 password: '',
                 passwordconfirm: ''
             })
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            // console.log(error)
+            this.setState({ errorMessage: error.code.toString().slice(5) })
         }
     }
 
@@ -79,6 +81,9 @@ export default class SignUpPage extends React.Component {
                             Sign in
                         </Typography>
                         <Box component="form" onSubmit={this.handleSubmit} noValidate sx={{ mt: 1 }}>
+                            <Typography variant="p" color="error">
+                                {this.state.errorMessage}
+                            </Typography>
                             <TextField
                                 onChange={this.handleChange}
                                 value={this.state.email}

@@ -37,9 +37,9 @@ function EmployeesPage(props) {
 
             const data = await checkData(props.currentUser.id)
             //check if there are any records, if not display message
-            if (data.employees.length <= 0) {
+            if (await !data.employees || data.employees.length <= 0) {
                 setData('Sorry no records yet testing...')
-                console.log(data.employees.length)
+                console.log('length is p ')
                 return
             }
 
@@ -51,7 +51,7 @@ function EmployeesPage(props) {
                         <Divider variant="inset" component="li" />
                         <ListItem alignItems="flex-start">
                             <ListItemAvatar>
-                                <Avatar alt="Cindy Baker" sx={{ bgcolor: 'purple' }}>{item.name.charAt(0).toUpperCase()}</Avatar>
+                                <Avatar alt="Cindy Baker" sx={{ bgcolor: 'purple' }}>{item.name.charAt(0)}</Avatar>
                             </ListItemAvatar>
                             <ListItemText
                                 primary={item.name}
@@ -127,8 +127,6 @@ function EmployeesPage(props) {
                             <Grid item xs={12}>
 
                                 <List sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper' }}>
-
-                                    test
                                     {data}
                                 </List>
 
