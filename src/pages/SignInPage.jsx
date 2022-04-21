@@ -84,7 +84,7 @@ export default class SignInPage extends React.Component {
                         <Typography component="h1" variant="h5">
                             Sign in
                         </Typography>
-                        <Box component="form" onSubmit={this.handleSubmit} noValidate sx={{ mt: 1 }}>
+                        <Box component="form" onSubmit={this.handleSubmit} sx={{ mt: 1 }}>
                             <Typography variant="p" color="error">
                                 {this.state.errorMessage}
                             </Typography>

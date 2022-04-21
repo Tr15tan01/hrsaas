@@ -24,10 +24,8 @@ const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '90px'
+    height: 'auto'
 }));
-
-// const url = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
 
 function EmployeesPage(props) {
     const [data, setData] = useState('test')
@@ -54,7 +52,7 @@ function EmployeesPage(props) {
                                 <Avatar alt="Cindy Baker" sx={{ bgcolor: 'purple' }}>{item.name.charAt(0)}</Avatar>
                             </ListItemAvatar>
                             <ListItemText
-                                primary={item.name}
+                                primary={`${item.name}  ${item.surname}`}
                                 secondary={
                                     <React.Fragment>
                                         <Typography
@@ -63,7 +61,7 @@ function EmployeesPage(props) {
                                             variant="body2"
                                             color="text.primary"
                                         >
-                                            {item.email} - Birthday - {item.birthDay}
+                                            Birthday - {item.birthDay}
                                         </Typography>
                                         <Typography
                                             sx={{ display: 'inline' }}
@@ -73,8 +71,19 @@ function EmployeesPage(props) {
                                         >
                                             {item.email} - Birthday - {item.birthDay}
                                         </Typography>
-                                        {' — Do you have Paris recommendations? Have you ever…'}
-                                        <Link to='/employee' state={{ name: item.name, imageUrl: item.photo }}>Test Llink</Link>
+
+                                        <Link to='/employee' state={{
+                                            name: item.name,
+                                            surname: item.surname,
+                                            imageUrl: item.photo,
+                                            birthday: item.birthDay,
+                                            address: item.address,
+                                            children: item.children,
+                                            email: item.email,
+                                            gender: item.gender,
+                                            info: item.info,
+                                            experience: item.experience
+                                        }}>More Info</Link>
                                     </React.Fragment>
                                 }
                             />
@@ -111,9 +120,8 @@ function EmployeesPage(props) {
                             <Grid item xs={12}>
 
                                 <Item>
-                                    {/* <img src={image} alt="test  url" /> */}
-                                    <Typography variant="h5">This is honna be another headline headline</Typography>
-                                    <Typography variant="p">This is honna be a paratraph abaouht it it it, This is honna be a paratraph abaouht it it it</Typography>
+                                    <Typography variant="h5">On this page you can see all employees</Typography>
+                                    <Typography variant="h6">By clicking on the respective link, it is possible to see more details on any enployee</Typography>
                                 </Item>
                             </Grid>
 
@@ -121,7 +129,7 @@ function EmployeesPage(props) {
                             <Grid item xs={12}>
                                 <Item>
 
-                                    <Typography variant="h5">This is honna be another headline headline</Typography>
+                                    <Typography variant="h5">The List</Typography>
                                 </Item>
                             </Grid>
                             <Grid item xs={12}>

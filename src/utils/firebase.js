@@ -83,24 +83,34 @@ export default app;
 
 //test
 
-export const addToArray = async (id, name, email, address, birthDay, age, gender, photo, user) => {
+export const addToArray = async (id, name, surname, email, address, birthDay, children, gender, info, experience, photo, user) => {
 
     const washingtonRef = await doc(firestore, "users", user);
 
+    if (photo === undefined) {
+        console.log('Please Upload A Photo!!!')
+        alert('Please Upload A Photo!!!')
+        return
+    }
+
     // Atomically add a new region to the "regions" array field.
     await updateDoc(washingtonRef, {
-        employees: arrayUnion({ id: id, name: name, email: email, address: address, birthDay: birthDay, age: age, gender: gender, photo: photo })
+        employees: arrayUnion({ id: id, name: name, surname: surname, email: email, address: address, birthDay: birthDay, children: children, gender: gender, info: info, experience: experience, photo: photo })
     });
 }
 
 export const uploadImage = (file, folder, fileName) => {
-    // const storageRef = ref(storage, "/images/file" + Math.random() * 10);
     const storageRef = ref(storage, "/" + folder + "/" + fileName)
+    if (file === undefined) {
+        // 'file' comes from the Blob or File API
+        return
+    } else {
+        uploadBytes(storageRef, file).then((snapshot) => {
+            console.log('Uploaded a blob or file!', snapshot);
+        });
+    }
 
-    // 'file' comes from the Blob or File API
-    uploadBytes(storageRef, file).then((snapshot) => {
-        console.log('Uploaded a blob or file!', snapshot);
-    });
+
 }
 
 export async function checkImage() {
