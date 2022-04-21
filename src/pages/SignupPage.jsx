@@ -150,7 +150,7 @@ export default class SignUpPage extends React.Component {
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link href="/signin" variant="body2">
+                                    <Link to="/signin" variant="body2">
                                         {"Have an account? Sign In"}
                                     </Link>
                                 </Grid>

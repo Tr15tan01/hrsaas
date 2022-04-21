@@ -3,18 +3,14 @@ import { useEffect, useState } from 'react';
 import { Container, Grid, Box, Paper, CssBaseline, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
 import { useLocation } from 'react-router-dom'
 
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 //local imports
 import TopBar from '../components/TopBar';
 // import Chart from '../components/Chart'
-import { checkData, checkImage } from '../utils/firebase';
+
 
 import ListComponent from '../components/List';
 // import InfoBox from '../components/InfoBox';
