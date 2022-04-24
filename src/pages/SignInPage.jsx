@@ -16,8 +16,6 @@ import { signInWithGoogle, auth } from '../utils/firebase'
 import Copyright from '../components/Copyright'
 
 
-
-
 // const theme = createTheme();
 
 export default class SignInPage extends React.Component {
@@ -39,6 +37,7 @@ export default class SignInPage extends React.Component {
     //         password: data.get('password'),
     //     });
     // };
+
 
     handleSubmit = async (event) => {
         event.preventDefault()
@@ -81,6 +80,14 @@ export default class SignInPage extends React.Component {
                         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                             <LockOutlinedIcon />
                         </Avatar>
+                        <Link
+                            variant="button"
+                            color="text.primary"
+                            to="/instruction"
+                            sx={{ my: 1, mx: 1.5, }}
+                        >
+                            Enterprise
+                        </Link>
                         <Typography component="h1" variant="h5">
                             Sign in
                         </Typography>
@@ -137,12 +144,29 @@ export default class SignInPage extends React.Component {
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link href="/hrsaas/signup" variant="body2">
+                                    <Link href="https://tr15tan01.github.io/hrsaas/signup" variant="body2">
                                         Don't have an account? Sign Up
                                     </Link>
                                 </Grid>
                             </Grid>
                         </Box>
+                        <Link variant="button" to="https://tr15tan01.github.io/hrsaas/signup" >
+                            Don't have an account? Sign Up
+                        </Link>
+                        <nav>
+                            <Link
+                                variant="button"
+                                color="text.primary"
+                                to="/instruction"
+                                sx={{
+                                    my: 1, mx: 1.5, cursor: 'pointer', '&:hover': {
+                                        background: "#f00",
+                                    }
+                                }}
+                            >
+                                Enterprise
+                            </Link>
+                        </nav>
                     </Box>
                     <Copyright sx={{ mt: 8, mb: 4 }} />
                 </Container>
