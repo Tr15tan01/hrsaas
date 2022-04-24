@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import GlobalStyles from '@mui/material/GlobalStyles';
 
 const MainNavigationComponent = () => {
@@ -53,10 +52,15 @@ const MainNavigationComponent = () => {
                         >
                             Signin
                         </Link>
+                        <Link
+                            variant="button"
+                            color="text.primary"
+                            to="/signup"
+                            sx={{ my: 1, mx: 1.5 }}
+                        >
+                            Signup
+                        </Link>
                     </nav>
-                    <Button to="/signin" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
-                        Login
-                    </Button>
                 </Toolbar>
             </AppBar>
         </>

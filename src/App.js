@@ -72,7 +72,7 @@ class App extends React.Component {
             {/* <Route path="/signin" element={<SignInPage />} /> */}
             {/* testing */}
             <Route path="/instruction" element={<InstructionPage language={this.state.language} />} />
-            <Route path="/signup" element={this.state.currentUser ? (<Navigate to="/" />) : (<SignUpPage />)} />
+            <Route path="/signup" element={this.state.currentUser ? (<Navigate to="/mainpage" />) : (<SignUpPage />)} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/newitem" element={<NewItemPage currentUser={this.state.currentUser} />} />
             <Route path="/employees" element={!this.state.currentUser ? (<Navigate to="/signin" />) : (<EmployeesPage currentUser={this.state.currentUser} testValue="test value" />)} />
