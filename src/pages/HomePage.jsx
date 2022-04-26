@@ -45,7 +45,6 @@ const bannerImageUrl = 'https://images.unsplash.com/photo-1563089145-599997674d4
 console.log('env is ', env)
 
 export default function HomePage() {
-    console.log('location', window.location.href)
     return (
         <React.Fragment>
             <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' }, nav: { textDecoration: 'none' } }} />
@@ -71,17 +70,12 @@ export default function HomePage() {
                             // borderRadius: 6,
                             p: 0,
                             m: 0
-                            // maxHeight: { xs: 233, md: 167 }
-                            // maxWidth: { xs: 350, md: 250 },
                         }}
                         alt="The house from the offer."
-                        // src={personUrl}
                         src={bannerImageUrl}
                     />
-                    <Typography variant="h5" align="center" color="white" component="p" sx={{ position: 'absolute', top: '33%' }}>
-                        Quickly build an effective pricing table for your potential customers with
-                        this layout. It&apos;s built with default MUI components with little
-                        customization.
+                    <Typography variant="h5" align="center" color="white" component="p" sx={{ position: 'absolute', top: '33%', left: '12%' }}>
+                        HRSaaS is a program which allows to monitor your company's staff
                     </Typography>
                 </Box>
             </Container>

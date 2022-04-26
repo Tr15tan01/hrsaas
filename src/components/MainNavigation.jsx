@@ -52,14 +52,14 @@ const MainNavigationComponent = () => {
                         >
                             Signin
                         </Link>
-                        <Link
+                        {/* <Link
                             variant="button"
                             color="text.primary"
                             to="/signup"
                             sx={{ my: 1, mx: 1.5 }}
                         >
                             Signup
-                        </Link>
+                        </Link> */}
                     </nav>
                 </Toolbar>
             </AppBar>

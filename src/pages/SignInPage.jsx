@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -132,8 +132,8 @@ export default class SignInPage extends React.Component {
                             </Button>
                             <Grid container>
                                 <Grid item xs>
-                                    <Link to="#" style={{ fontSize: '12px', color: 'dodgerblue' }}>
-                                        Forgot password?
+                                    <Link to="/hrsaas" style={{ fontSize: '12px', color: 'dodgerblue', float: 'left' }}>
+                                        Go To Main Page
                                     </Link>
                                 </Grid>
                                 <Grid item>

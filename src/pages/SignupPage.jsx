@@ -146,8 +146,8 @@ export default class SignUpPage extends React.Component {
 
                             <Grid container>
                                 <Grid item xs>
-                                    <Link to="#" style={{ fontSize: '12px', color: 'dodgerblue' }}>
-                                        Forgot password?
+                                    <Link to="/hrsaas" style={{ fontSize: '12px', color: 'dodgerblue', float: 'left' }}>
+                                        Go To Main Page
                                     </Link>
                                 </Grid>
                                 <Grid item>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Grid, Box, Paper, CssBaseline, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
@@ -9,6 +9,8 @@ import ImageAvatars from '../components/Avatar'
 
 import ListComponent from '../components/List';
 import InfoBox from '../components/InfoBox';
+
+import { checkData } from '../utils/firebase';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -21,7 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const url = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
 
 function MainPage() {
-    console.log('location', window.location.href)
+
     return (
         <div className="App">
             <CssBaseline />
