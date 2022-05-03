@@ -28,6 +28,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function EmployeesPage(props) {
+
     const [data, setData] = useState('test')
 
     useEffect(() => {
@@ -40,10 +41,9 @@ function EmployeesPage(props) {
                 console.log('length is p ')
                 return
             }
-
+            console.log('employees test')
             //if there are records display them
             const dataDisplay = data.employees.map((item) => {
-
                 return (
                     <div key={item.id}>
                         <Divider variant="inset" component="li" />
@@ -104,7 +104,8 @@ function EmployeesPage(props) {
     }
 
     return (
-        <div className="App">
+
+        <div className="App" >
             <CssBaseline />
             <Container maxWidth="xl" sx={{ bgcolor: 'whitesmoke', p: 0, m: 0 }}>
                 <TopBar />
