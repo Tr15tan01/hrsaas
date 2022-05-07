@@ -17,7 +17,7 @@ const ListComponent = () => {
         <Box sx={{ width: '100%', bgcolor: 'background.paper', boxShadow: 3 }}>
             <nav aria-label="main mailbox folders">
                 <List sx={{ width: "300px" }}>
-                    <Link to="/"><ListItem disablePadding>
+                    <Link to="/hrsaas"><ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
                                 <InboxIcon />

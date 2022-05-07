@@ -42,7 +42,7 @@ export default class NewItemPage extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const { id, name, surname, email, address, birthDay, children, gender, info, experience, photo } = this.state;
-        console.log('State is - ', this.state, 'user is - ', this.props.currentUser.id)
+        // console.log('State is - ', this.state, 'user is - ', this.props.currentUser.id)
         addToArray(id, name, surname, email, address, birthDay, children, gender, info, experience, photo, this.props.currentUser.id)
         this.setState({ name: '', surname: '', email: '', address: '', birthDay: '', children: 0, gender: '', info: '', experience: '' })
         const file = this.state.selectedFile

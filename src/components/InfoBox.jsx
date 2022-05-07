@@ -2,21 +2,21 @@ import * as React from 'react';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import Box from '@mui/material/Box';
 
-export default function InfoBox() {
+export default function InfoBox(props) {
     return (
         <Box
             sx={{
                 bgcolor: 'secondary.light',
                 boxShadow: 1,
                 borderRadius: 1,
-                p: 2,
+                p: 1,
                 minWidth: '100%',
                 m: 1
             }}
         >
-            <Box sx={{ color: 'text.secondary' }}>Sessions</Box>
+            <Box sx={{ color: 'text.secondary' }}>{props.headline}</Box>
             <Box sx={{ color: 'text.primary', fontSize: 34, fontWeight: 'medium' }}>
-                98.3 K
+                {props.numberData}
             </Box>
             <Box
                 component={TrendingUpIcon}

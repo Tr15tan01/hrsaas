@@ -89,11 +89,11 @@ export default function TopBar() {
   const signOut = () => {
     handleMenuClose()
     auth.signOut()
-    console.log('signed out')
+    // console.log('signed out')
   }
 
   const handleMenuOpen = () => {
-    console.log('menu opened')
+    // console.log('menu opened')
     setShowMenu(!showMenu)
   }
 

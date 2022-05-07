@@ -38,10 +38,9 @@ function EmployeesPage(props) {
             //check if there are any records, if not display message
             if (await !data.employees || data.employees.length <= 0) {
                 setData('Sorry no records yet testing...')
-                console.log('length is p ')
+                // console.log('length is p ')
                 return
             }
-            console.log('employees test')
             //if there are records display them
             const dataDisplay = data.employees.map((item) => {
                 return (
@@ -99,9 +98,9 @@ function EmployeesPage(props) {
 
     }, [props.currentUser.id])
 
-    if (props.currentUser) {
-        console.log('props os', props)
-    }
+    // if (props.currentUser) {
+    //     console.log('props os', props)
+    // }
 
     return (
 

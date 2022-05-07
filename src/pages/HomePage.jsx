@@ -7,7 +7,7 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
-import env from "react-dotenv";
+// import env from "react-dotenv";
 
 //local
 import ControlledAccordions from '../components/Accordion'
@@ -42,7 +42,7 @@ const footers = [
 
 const bannerImageUrl = 'https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 
-console.log('env is ', env)
+// console.log('env is ', env)
 
 export default function HomePage() {
     return (

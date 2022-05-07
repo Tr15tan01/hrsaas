@@ -10,8 +10,8 @@ const TestPage = (props) => {
                 < div >
 
                     <h3>Test Page</h3>
-                    {props.count}
-                    <h3>Dynamic content {value}</h3>
+                    <h3>count is {props.count}</h3>
+                    <h3>text is  {value.text}</h3>
                     {/* <h3>anther Dynamic content {count}</h3> */}
                 </div>
             )}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Container, Grid, Box, Paper, CssBaseline, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import List from '@mui/material/List';
@@ -26,7 +26,6 @@ const Item = styled(Paper)(({ theme }) => ({
 function EmployeePage(props) {
 
     const location = useLocation()
-    console.log(location.state, 'is location')
 
     const [data, setData] = useState('test')
     const [image, setImage] = useState('')
@@ -36,8 +35,6 @@ function EmployeePage(props) {
         // const spaceRef = await ref(storage, 'images/chatbot.jpg');
         getDownloadURL(ref(storage, url))
             .then((url) => {
-
-                console.log('utl is', url)
                 setImage(url)
                 return url
             })
@@ -49,8 +46,6 @@ function EmployeePage(props) {
     const url = location.state.imageUrl
     checkImage(url)
 
-
-    console.log('image is - ', location.state.imageUrl)
     const { name, surname, email, birthday, address, gender, children, info, experience } = location.state
     return (
         <div className="App">
@@ -88,32 +83,32 @@ function EmployeePage(props) {
                             <Grid item xs={12}>
 
                                 <Item>
-                                    <Typography variant="h5">Name and Surname: {name}  {surname}</Typography>
-                                    <Typography variant="h5">Birthday: {birthday}</Typography>
+                                    <Typography variant="h6">Name and Surname: {name}  {surname}</Typography>
+                                    <Typography variant="h6">Birthday: {birthday}</Typography>
                                     <Typography variant="p">More info see below</Typography>
                                 </Item>
                             </Grid>
 
                             <Grid item xs={12}>
                                 <Item>
-                                    <Typography variant="h5">ASddress: {address}</Typography>
+                                    <Typography variant="h6">ASddress: {address}</Typography>
                                 </Item>
                             </Grid>
 
                             <Grid item xs={12}>
                                 <Item>
-                                    <Typography variant="h5">Gender: {gender}</Typography>
+                                    <Typography variant="h6">Gender: {gender}</Typography>
                                 </Item>
                             </Grid>
 
                             <Grid item xs={12}>
                                 <Item>
-                                    <Typography variant="h5">Email: {email}</Typography>
+                                    <Typography variant="h6">Email: {email}</Typography>
                                 </Item>
                             </Grid>
                             <Grid item xs={12}>
                                 <Item>
-                                    <Typography variant="h5">Info: {info}</Typography>
+                                    <Typography variant="h6">Info: {info}</Typography>
                                 </Item>
                             </Grid>
                             <Grid item xs={12}>

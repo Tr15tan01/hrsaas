@@ -23,7 +23,7 @@ import InstructionPage from './pages/InstrictionPage';
 import './App.css';
 import { auth, createUserProfileDocument, checkData } from './utils/firebase'
 
-export const DataContext = React.createContext('null')
+export const DataContext = React.createContext({ value: null, text: '' })
 
 class App extends React.Component {
 
@@ -50,10 +50,9 @@ class App extends React.Component {
               ...snapShot.data()
             }
           }, () => {
-            console.log('user id', this.state.currentUser.id)
+            // console.log('user id', this.state.currentUser.id)
             const readData = async () => {
               const data = await checkData(this.state.currentUser.id)
-              console.log('teaddata is ', data)
               this.setState({ count: data.employees.length })
             }
             readData()
@@ -70,14 +69,10 @@ class App extends React.Component {
   }
 
   render() {
-    // if (this.state currentUser) {
-    //   console.log('user', this.state.currentUser)
-    // } else {
-    //   console.log('not logged in')
-    // }
+
     return (
       <div className="App">
-        <DataContext.Provider value={this.state.count} >
+        <DataContext.Provider value={{ count: this.state.count, text: 'thisi is a test text' }} >
           <BrowserRouter>
             <Routes>
               <Route exact path="/hrsaas" element={<HomePage />} />
